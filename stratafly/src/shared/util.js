@@ -6,3 +6,6 @@ export const getDateToString = date => {
   let formattedDay = dateOfMonth < 10 ? "0" + dateOfMonth : dateOfMonth
   return fullYear + "-" + formattedMonth + "-" + formattedDay
 }
+
+export const isObjectEmpty = obj =>
+  Object.entries(obj).length === 0 || typeof obj === "undefined"
