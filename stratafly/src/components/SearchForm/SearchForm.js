@@ -1,12 +1,22 @@
 import React from "react"
 import { TripTypeAndTraveller } from "./TripTypeAndTraveller"
 import { makeStyles } from "@material-ui/core/styles"
+import { FromAndToDate } from "./FromAndToDate"
+import { FromAndToLocation } from "./FromAndToLocation"
 
 export const SearchForm = ({
   selectedRadio,
   onChangeRadio,
   onClickTraveller,
   totalTravellers,
+  fromLocation,
+  onChangeFromLocation,
+  toLocation,
+  onChangeToLocation,
+  fromDate,
+  toDate,
+  onFromDateChange,
+  onToDateChange,
 }) => {
   const classes = useStyles()
   return (
@@ -16,6 +26,22 @@ export const SearchForm = ({
         onChangeRadio={onChangeRadio}
         onClickTraveller={onClickTraveller}
         totalTravellers={totalTravellers}
+        classes={classes}
+      />
+
+      <FromAndToLocation
+        fromLocation={fromLocation}
+        onChangeFromLocation={onChangeFromLocation}
+        onChangeToLocation={onChangeToLocation}
+        classes={classes}
+      />
+
+      <FromAndToDate
+        selectedRadio={selectedRadio}
+        fromDate={fromDate}
+        onFromDateChange={onFromDateChange}
+        toDate={toDate}
+        onToDateChange={onToDateChange}
         classes={classes}
       />
     </div>
@@ -32,5 +58,11 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },
+  textFields: {
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+  },
+  textFieldIcon: { color: theme.palette.text.secondaryMediumEmphasis },
   travellerIcon: { color: theme.palette.text.secondary },
 }))

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 
 import { MuiThemeProvider } from "@material-ui/core/styles"
 import { Theme } from "../Theme"
+import { getDateToString } from "../shared/util"
 
 import { Desktop } from "../components/Desktop"
 import { AppHeader } from "../components/AppHeader"
@@ -20,6 +21,8 @@ class App extends Component {
           onChangeRadio={() => console.log("Changed trip type")}
           onClickTraveller={() => console.log("Clicked traveller")}
           totalTravellers={"1"}
+          fromDate={getDateToString(new Date())}
+          toDate={getDateToString(new Date())}
         />
       </MuiThemeProvider>
     )

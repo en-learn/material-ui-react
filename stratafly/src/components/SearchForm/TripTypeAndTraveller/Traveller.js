@@ -4,6 +4,7 @@ import TravellerIcon from "@material-ui/icons/PersonOutlined"
 
 export const Traveller = ({ classes, onClickTraveller, totalTravellers }) => {
   return (
+    // These Grids don't appear to make any difference?
     <Grid container>
       <Grid item>
         <IconButton aria-label="Traveller" onClick={onClickTraveller}>
