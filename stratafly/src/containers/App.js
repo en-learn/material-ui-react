@@ -7,6 +7,7 @@ import { getDateToString } from "../shared/util"
 import { Desktop } from "../components/Desktop"
 import { AppHeader } from "../components/AppHeader"
 import { SearchForm } from "../components/SearchForm"
+import { Empty } from "../components/Empty"
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           fromDate={getDateToString(new Date())}
           toDate={getDateToString(new Date())}
         />
+        <Empty />
       </MuiThemeProvider>
     )
   }
