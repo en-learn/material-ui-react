@@ -5,6 +5,7 @@ import { Theme } from "../Theme"
 
 import { Desktop } from "../components/Desktop"
 import { AppHeader } from "../components/AppHeader"
+import { SearchForm } from "../components/SearchForm"
 
 class App extends Component {
   render() {
@@ -14,6 +15,12 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={Theme}>
         <AppHeader />
+        <SearchForm
+          selectedRadio={"round-trip"}
+          onChangeRadio={() => console.log("Changed trip type")}
+          onClickTraveller={() => console.log("Clicked traveller")}
+          totalTravellers={"1"}
+        />
       </MuiThemeProvider>
     )
   }
